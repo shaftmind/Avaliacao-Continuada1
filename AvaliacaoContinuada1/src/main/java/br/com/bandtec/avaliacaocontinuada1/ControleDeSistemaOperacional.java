@@ -44,7 +44,6 @@ public class ControleDeSistemaOperacional extends javax.swing.JFrame {
         lblMax = new javax.swing.JLabel();
         lblMed = new javax.swing.JLabel();
         lblMaxCpu = new javax.swing.JLabel();
-        lblMinCpu = new javax.swing.JLabel();
         lblMedCpu = new javax.swing.JLabel();
         lblMaxMemoria = new javax.swing.JLabel();
         lblMinMemoria = new javax.swing.JLabel();
@@ -53,6 +52,7 @@ public class ControleDeSistemaOperacional extends javax.swing.JFrame {
         lblMinDisco = new javax.swing.JLabel();
         lblMedDisco = new javax.swing.JLabel();
         bntNovaLeitura = new javax.swing.JButton();
+        lblMinCpu = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -88,8 +88,6 @@ public class ControleDeSistemaOperacional extends javax.swing.JFrame {
 
         lblMaxCpu.setText("0");
 
-        lblMinCpu.setText("0");
-
         lblMedCpu.setText("0");
 
         lblMaxMemoria.setText("0");
@@ -111,46 +109,62 @@ public class ControleDeSistemaOperacional extends javax.swing.JFrame {
             }
         });
 
+        lblMinCpu.setText("0");
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(34, 34, 34)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(bprDisco, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(lblMemoria)
-                    .addComponent(lblDisco)
-                    .addComponent(lblCPU)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(lblMax)
+                        .addGap(57, 57, 57))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addGroup(layout.createSequentialGroup()
+                                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(lblMaxMemoria))
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(34, 34, 34)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(bprDisco, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(lblMemoria)
+                                    .addComponent(lblDisco)
+                                    .addComponent(lblCPU)
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addComponent(bprCPU, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                        .addComponent(lblPorcentagemCpu))
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addComponent(bprMemoria, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                            .addComponent(lblPorcentagemDis, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                            .addComponent(lblPorcentagemMem, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 75, Short.MAX_VALUE)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(lblMaxCpu, javax.swing.GroupLayout.Alignment.TRAILING)
+                                    .addComponent(lblMaxDisco, javax.swing.GroupLayout.Alignment.TRAILING))))
+                        .addGap(76, 76, 76)))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(lblMin)
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(bprCPU, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(lblPorcentagemCpu))
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(bprMemoria, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(lblPorcentagemDis, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(lblPorcentagemMem, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
-                .addGap(63, 63, 63)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(lblMaxDisco)
-                    .addComponent(lblMaxCpu)
-                    .addComponent(lblMax)
-                    .addComponent(lblMaxMemoria))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addComponent(lblMin, javax.swing.GroupLayout.Alignment.TRAILING)
-                        .addComponent(lblMinCpu))
-                    .addComponent(lblMinMemoria)
-                    .addComponent(lblMinDisco))
-                .addGap(40, 40, 40)
+                        .addGap(16, 16, 16)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(lblMinMemoria)
+                            .addComponent(lblMinCpu)
+                            .addComponent(lblMinDisco))))
+                .addGap(62, 62, 62)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(lblMed)
-                    .addComponent(lblMedMemoria)
-                    .addComponent(lblMedCpu)
-                    .addComponent(lblMedDisco))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(14, 14, 14)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(lblMedMemoria)
+                            .addComponent(lblMedCpu)
+                            .addComponent(lblMedDisco))))
                 .addGap(80, 80, 80))
             .addGroup(layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -160,11 +174,11 @@ public class ControleDeSistemaOperacional extends javax.swing.JFrame {
                     .addGroup(layout.createSequentialGroup()
                         .addGap(245, 245, 245)
                         .addComponent(lblSubTitulo)))
-                .addContainerGap(169, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addGap(0, 0, Short.MAX_VALUE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(bntNovaLeitura, javax.swing.GroupLayout.PREFERRED_SIZE, 248, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(36, 36, 36))
+                .addGap(41, 41, 41))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -186,8 +200,8 @@ public class ControleDeSistemaOperacional extends javax.swing.JFrame {
                         .addGroup(layout.createSequentialGroup()
                             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                                 .addComponent(lblMaxCpu)
-                                .addComponent(lblMinCpu)
-                                .addComponent(lblMedCpu))
+                                .addComponent(lblMedCpu)
+                                .addComponent(lblMinCpu))
                             .addGap(62, 62, 62)
                             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                                 .addComponent(lblMaxMemoria)
@@ -216,87 +230,107 @@ public class ControleDeSistemaOperacional extends javax.swing.JFrame {
                         .addComponent(lblMedDisco)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(lblPorcentagemDis)
-                .addGap(49, 49, 49)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 31, Short.MAX_VALUE)
                 .addComponent(bntNovaLeitura)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGap(29, 29, 29))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
+         Integer contador = 0;
+         Integer valorGuardaCPU = 0;
+         Integer maxCPU = 0;
+         Integer minCPU = 100;
+         Integer valorGuardaMem = 0;
+         Integer maxMEM = 0;
+         Integer minMEM = 100;
+         Integer valorGuardaDis = 0;
+         Integer maxDIS = 0;
+         Integer minDIS = 100;
+         
+         
+         
     private void bntNovaLeituraActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bntNovaLeituraActionPerformed
         Random aleatorioCPU = new Random();
         Random aleatorioMem = new Random();
         Random aleatorioDis = new Random();
         
-        //Integer contador = 0;
-        //contador++;
         
-       String sorteCPU = Integer.toString(aleatorioCPU.nextInt(101));
-       String sorteMEM = Integer.toString(aleatorioCPU.nextInt(101));
-       String sorteDIS = Integer.toString(aleatorioCPU.nextInt(101));
+        contador++;
        
-       Integer numCPU = Integer.valueOf(sorteCPU);
-       Integer numMEM = Integer.valueOf(sorteMEM);
-       Integer numDIS = Integer.valueOf(sorteDIS);
+       Integer numCPU = aleatorioCPU.nextInt(80)+ 1;
+       Integer numMEM = aleatorioMem.nextInt(80) + 1;
+       Integer numDIS = aleatorioDis.nextInt(85) + 1;
        
-       Integer maxCPU = Integer.valueOf(lblMaxCpu.getText());
-       Integer maxMEM = Integer.valueOf(lblMaxMemoria.getText());
-       Integer maxDIS = Integer.valueOf(lblMaxDisco.getText());
+       //Integer maxCPU = Integer.valueOf(lblMaxCpu.getText());
+       //Integer maxMEM = Integer.valueOf(lblMaxMemoria.getText());
+       //Integer maxDIS = Integer.valueOf(lblMaxDisco.getText());
        
-       Integer minCPU = Integer.valueOf(lblMinCpu.getText());
-       Integer minMEM = Integer.valueOf(lblMinMemoria.getText());
-       Integer minDIS = Integer.valueOf(lblMinDisco.getText());
+      
+       //Integer minCPU = Integer.valueOf(lblMinCpu.getText());
+       //Integer minMEM = Integer.valueOf(lblMinMemoria.getText());
+       //Integer minDIS = Integer.valueOf(lblMinDisco.getText());
        
        //Integer medCPU = Integer.valueOf(lblPorcentagemCpu.getText());
        //Integer medMEM = Integer.valueOf(lblMaxCpu.getText());
        //Integer medDIS = Integer.valueOf(lblMaxCpu.getText());
        
+       Integer processoMediaCpu = valorGuardaCPU + numCPU;
+       valorGuardaCPU = processoMediaCpu;
+       Integer mediaCPU = valorGuardaCPU / contador;
+       lblMedCpu.setText(String.format("%d", mediaCPU));
+       
+       Integer processoMediaMem = numMEM + valorGuardaMem;
+       valorGuardaMem = processoMediaMem;
+       Integer mediaMEM = valorGuardaMem / contador;
+       lblMedMemoria.setText(String.format("%d", mediaMEM));
+       
+       Integer processoMediaDis = numDIS + valorGuardaDis;
+       valorGuardaDis = processoMediaDis;
+       Integer mediaDIS = valorGuardaDis / contador;
+       lblMedDisco.setText(String.format("%d", mediaDIS));
+       
        if(numCPU > maxCPU){
-            lblMaxCpu.setText(sorteCPU); 
+           maxCPU = numCPU;
+            lblMaxCpu.setText(String.format("%d", numCPU)); 
              //System.out.println(sorteCPU);
       }else if(numCPU < minCPU){
-           lblMinCpu.setText(sorteCPU);
+          minCPU = numCPU;
+          lblMinCpu.setText(String.format("%d", numCPU));
            //System.out.println(sorteCPU);
        }
       
       if(numMEM > maxMEM){
-             lblMaxMemoria.setText(sorteMEM); 
+          maxMEM = numMEM;
+             lblMaxMemoria.setText(String.format("%d", numMEM)); 
          
        }else if(numMEM < minMEM){
-          lblMinMemoria.setText(sorteMEM);
+           minMEM = numMEM;
+          lblMinMemoria.setText(String.format("%d", numMEM));
          
        }
       
       if(numDIS > maxDIS){
-             lblMaxDisco.setText(sorteDIS); 
+          maxDIS = numDIS;
+             lblMaxDisco.setText(String.format("%d", numDIS)); 
          
        }else if(numDIS < minDIS){
-          lblMinDisco.setText(sorteDIS);
+           minDIS = numDIS;
+          lblMinDisco.setText(String.format("%d", numDIS));
            
       }
-       
-       //Integer valorCPU = numCPU + medCPU;
-       //Double mediaCPU = new Double(valorCPU / contador).doubleValue();
-       //String lindo = Double.toString(mediaCPU);
-       //lblMedCpu.setText(lindo);
-       // System.out.println(lindo);
-       
        
         
         //System.out.println(contador);
         
-        lblPorcentagemCpu.setText(sorteCPU + "%");
+        lblPorcentagemCpu.setText(numCPU + "%");
         bprCPU.setValue(numCPU);
         
-        lblPorcentagemMem.setText(sorteMEM + "%");
+        lblPorcentagemMem.setText(numMEM + "%");
         bprMemoria.setValue(numMEM);
         
-        lblPorcentagemDis.setText(sorteDIS + "%");
+        lblPorcentagemDis.setText(numDIS + "%");
         bprDisco.setValue(numDIS);
-        
-        
-        
         
         
         
